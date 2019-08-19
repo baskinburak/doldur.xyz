@@ -1,0 +1,184 @@
+#schedule-table tr {
+	height:30px;
+}
+.sc-nav {
+	background-color: #E44424;
+	margin-bottom: 10px;
+}
+
+#save-modal {
+	background-color: #E44424;
+	color:white;
+}
+
+#save-modal label {
+	color: white;
+}
+
+#save-modal .button {
+	padding:10px 25px;
+}
+
+#schedule-table {
+	width: 100%;
+}
+
+#schedule-table td,
+#schedule-table th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+
+#schedule-table td {
+	cursor: pointer;
+	text-align:center;
+}
+
+.ui-menu {
+	padding: 3px 0;
+}
+
+.ui-menu .ui-menu-item {
+	padding:0 3px !important;
+	font-size:13px;
+}
+
+.sc-selected-course {
+	cursor: pointer;
+	margin: 5px 15px;
+	color: white;
+	font-weight:bold;
+	padding: 3px 10px;
+	font-size:12px;
+}
+
+.sc-selected-course-cancel {
+	cursor:pointer;
+	display:inline-block;
+	float:right;
+	height:10px;
+	width:10px;
+	background-image: url(img/cross.png);
+	background-size: 10px 10px;
+	margin-top:4px;
+}
+
+.sc-cell-occupied {
+	background-color: black;
+	color:white;
+}
+
+input[type='checkbox']+label {
+	font-size:15px !important;
+}
+
+#dept-constraint-current-course+label,
+#surname-constraint-current-course+label {
+	font-size:12px !important;
+}
+
+#form-course {
+	background-color: #E44424;
+	color:white !important;
+	padding:5px 10px;
+}
+
+#form-course label {
+	color:white;
+}
+
+
+#course-info-to-reveal {
+	display:none;
+}
+
+#form-course {
+	display:none;
+}
+
+.single-section {
+	margin-bottom:10px;
+	background-color: #eee;
+	color: black;
+	padding:10px;
+}
+
+.select-option-div {
+	display:inline-block;
+	margin-right: 5px;
+}
+.sc-possibility-nav {
+	display: block;
+}
+
+.lecture-block {
+	display: block;
+	color: white;
+	font-weight:bold;
+	font-size: 11px;
+	padding: 3px 5px;
+	border-radius: 5px;
+}
+
+.own-block {
+	display: block;
+	color: white;
+	font-weight:bold;
+	font-size: 11px;
+	padding: 3px 5px;
+	border-radius: 5px;
+	background-color: #123456;
+	color:white;
+}
+
+.lecture-block + .lecture-block,
+.own-block + .lecture-block,
+.own-block + .own-block,
+.lecture-block + .own-block  {
+	margin-top: 3px;
+}
+
+
+.button.secondary:hover{
+	background-color: #e7e7e7;
+}
+#gather-block-importance,
+#lunch-time-importance {
+	display: none;
+}
+
+#logo {
+	height: 30px;
+	width: 30px;
+}
+#forgot-status-message,
+#status-message {
+	background-color: #B28F00;
+	color: white;
+	padding: 3px 7px;
+	display:none;
+}
+
+#forgot-status-message-happy {
+		background-color: green;
+	color: white;
+	padding: 3px 7px;
+	display:none;
+}
+
+#toggle-sections {
+	padding:5px 10px;
+	background-color: #61B6D9;
+	color: white;
+	cursor: pointer;
+	text-align:center;
+}
+
+#toggle-sections:hover {
+	background-color: #A0D3E8;
+	color: white;
+}
+
+#your-own-thing {
+	display:none;
+}
