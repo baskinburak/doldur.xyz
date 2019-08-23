@@ -90,7 +90,7 @@ date_default_timezone_set('Europe/Istanbul');
 					$row_idx = 1;
 					?>
 						<div style="text-align:center; margin: 10px 0"><a href="http://<?php echo $_SERVER['HTTP_HOST']; echo $_SERVER['REQUEST_URI'];?>">http://<?php echo $_SERVER['HTTP_HOST']; echo $_SERVER['REQUEST_URI'];?></a></div>
-						<table id="schedule-table"><thead><tr><th>Hours</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr></thead><tbody>
+						<form id="calendar" method="post" action="/calendar_download.php"><table id="schedule-table"><thead><tr><th>Hours</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr></thead><tbody>
 					<?php
 						for(; $row_idx<=9; $row_idx++) {
 							echo "<tr>";
@@ -113,7 +113,7 @@ date_default_timezone_set('Europe/Istanbul');
 							echo "</tr>";
 						}
 					?>
-						</tbody></table>
+						</tbody></table></form>
 					<?php
 		?>
 			</div>
@@ -258,6 +258,11 @@ date_default_timezone_set('Europe/Istanbul');
 						<div class="row">
 							<div class="large-12 columns">
 								<a href="" id="initiate-schedule" class="button expand">Schedule</a>
+							</div>
+						</div>
+							<div class="row">
+							<div class="large-12 columns">
+								<input form="calendar " type="submit" class="button expand">Export as Calendar</a>
 							</div>
 						</div>
 					</form>
