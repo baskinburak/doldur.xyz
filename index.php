@@ -1,7 +1,5 @@
 
 <?php
-echo "all good things must end.<br> reach me if you want to buy the domain: basbursen@gmail.com <br><img src='https://i.pinimg.com/originals/09/ac/14/09ac14ffeb1878670c64cfd21a7371f7.jpg'/><br> Maybe when other good things end";
-die();
  @session_start();
 date_default_timezone_set('Europe/Istanbul');
 //ini_set('display_errors',1);
@@ -142,7 +140,7 @@ date_default_timezone_set('Europe/Istanbul');
 							<li style="float:right"><a href="#" id="sc-possibility-next" class="button secondary tiny">Next</a></li>
 						</ul>
 					</div>
-					<table id="schedule-table"><thead><tr><th>Hours</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr></thead><tbody><tr><td>8:40</td><td id="mon-1"></td><td id="tue-1"></td><td id="wed-1"></td><td id="thu-1"></td><td id="fri-1"></td></tr><tr><td>9:40</td><td id="mon-2"></td><td id="tue-2"></td><td id="wed-2"></td><td id="thu-2"></td><td id="fri-2"></td></tr><tr><td>10:40</td><td id="mon-3"></td><td id="tue-3"></td><td id="wed-3"></td><td id="thu-3"></td><td id="fri-3"></td></tr><tr><td>11:40</td><td id="mon-4"></td><td id="tue-4"></td><td id="wed-4"></td><td id="thu-4"></td><td id="fri-4"></td></tr><tr><td>12:40</td><td id="mon-5"></td><td id="tue-5"></td><td id="wed-5"></td><td id="thu-5"></td><td id="fri-5"></td></tr><tr><td>13:40</td><td id="mon-6"></td><td id="tue-6"></td><td id="wed-6"></td><td id="thu-6"></td><td id="fri-6"></td></tr><tr><td>14:40</td><td id="mon-7"></td><td id="tue-7"></td><td id="wed-7"></td><td id="thu-7"></td><td id="fri-7"></td></tr><tr><td>15:40</td><td id="mon-8"></td><td id="tue-8"></td><td id="wed-8"></td><td id="thu-8"></td><td id="fri-8"></td></tr><tr><td>16:40</td><td id="mon-9"></td><td id="tue-9"></td><td id="wed-9"></td><td id="thu-9"></td><td id="fri-9"></td></tr></tbody></table>
+					<form id="calendar" method="post" action="/calendar_download.php"><table id="schedule-table"><thead><tr><th>Hours</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr></thead><tbody><tr><td>8:40</td><td id="mon-1"></td><td id="tue-1"></td><td id="wed-1"></td><td id="thu-1"></td><td id="fri-1"></td></tr><tr><td>9:40</td><td id="mon-2"></td><td id="tue-2"></td><td id="wed-2"></td><td id="thu-2"></td><td id="fri-2"></td></tr><tr><td>10:40</td><td id="mon-3"></td><td id="tue-3"></td><td id="wed-3"></td><td id="thu-3"></td><td id="fri-3"></td></tr><tr><td>11:40</td><td id="mon-4"></td><td id="tue-4"></td><td id="wed-4"></td><td id="thu-4"></td><td id="fri-4"></td></tr><tr><td>12:40</td><td id="mon-5"></td><td id="tue-5"></td><td id="wed-5"></td><td id="thu-5"></td><td id="fri-5"></td></tr><tr><td>13:40</td><td id="mon-6"></td><td id="tue-6"></td><td id="wed-6"></td><td id="thu-6"></td><td id="fri-6"></td></tr><tr><td>14:40</td><td id="mon-7"></td><td id="tue-7"></td><td id="wed-7"></td><td id="thu-7"></td><td id="fri-7"></td></tr><tr><td>15:40</td><td id="mon-8"></td><td id="tue-8"></td><td id="wed-8"></td><td id="thu-8"></td><td id="fri-8"></td></tr><tr><td>16:40</td><td id="mon-9"></td><td id="tue-9"></td><td id="wed-9"></td><td id="thu-9"></td><td id="fri-9"></td></tr></tbody></table></table>
 					<a href="#" id="add-your-own" class="button tiny expand">Add your own thing (Currently no collision check for these things)</a>
 					<div id="your-own-thing">
 						<form>
@@ -262,7 +260,7 @@ date_default_timezone_set('Europe/Istanbul');
 						</div>
 							<div class="row">
 							<div class="large-12 columns">
-								<input form="calendar " type="submit" class="button expand">Export as Calendar</a>
+								<input form="calendar" type="submit" class="button expand" value="Export as Calendar">
 							</div>
 						</div>
 					</form>
