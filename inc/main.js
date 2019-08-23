@@ -473,7 +473,7 @@ jQuery(document).ready(function(){
 	}
 	function get_added_color_with_idx(course_idx) {
 		for(var i=0;i<added_courses.length;i++) {
-			if(added_courses[i]["idx"] == course_idx)
+			 if(added_courses[i]["idx"] == course_idx)
 				return added_courses[i]["bg_color"];
 		}
 		return "#000000";
@@ -485,6 +485,28 @@ jQuery(document).ready(function(){
 		}
 		return "#000000";
 	}
+	
+	function give_start(timedata) { // We get the hour from the suffix
+		regex = /[0-9]{1}$/gm;
+		var hour = 8 + (timedata.match(regex) - 1)
+		return hour.toString()+":40"
+	}
+	
+	function give_day(timedata) { // This function returns an id for any given day
+		if (timedata.match(/^mon/gm)) {
+			return "0"
+		} else if (timedata.match(/^tue/gm)) {
+			return "1"
+		} else if  (timedata.match(/^wed/gm)) {
+			return "2"
+		} else if  (timedata.match(/^thu/gm)) {
+			return "3"
+		} else if  (timedata.match(/^fri/gm)) {
+			return "4"
+		}
+	}	
+
+	
 	function apply_schedule(schedule) {
 		jQuery(".lecture-block").parent("td").removeAttr("filled");
 		jQuery(".lecture-block").remove();
@@ -493,6 +515,7 @@ jQuery(document).ready(function(){
 			var section_idx = schedule[i]["section_idx"];
 			var color_ehe = get_added_color_with_idx(course_idx);
 			for(var j=0; j < course_data[course_idx]["s"][section_idx]["t"].length; j++) {
+				var dataid = Math.random().toString(36).substring(7); // Why bother with floats when we can generate random string
 				var time = course_data[course_idx]["s"][section_idx]["t"][j];
 				var new_div = jQuery("<div></div>");
 				new_div.addClass("lecture-block");
@@ -504,6 +527,11 @@ jQuery(document).ready(function(){
 				new_div.css("background-color", color_ehe);
 				jQuery("#"+time["b"]).attr("filled", "true");
 				jQuery("#"+time["b"]).append(new_div);
+				var cal_data = "<input type='hidden' name='"+dataid+"[dtstart]' value='"+give_start(time["b"])+"'>";
+				cal_data += "<input type='hidden' name='"+dataid+"[name]' value='"+course_data[course_idx]['n'].split('-')[0].trim()+"-"+course_data[course_idx]["s"][section_idx]["sn"]+"'>";
+				cal_data += "<input type='hidden' name='"+dataid+"[loc]' value='"+time["p"]+"'>";
+				cal_data += "<input type='hidden' name='"+dataid+"[day]' value='"+give_day(time["b"])+"'>";
+				jQuery("#"+time["b"]).append(cal_data);
 			}
 			schedule_color_index++;
 		}
