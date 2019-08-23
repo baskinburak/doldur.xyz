@@ -510,6 +510,7 @@ jQuery(document).ready(function(){
 	function apply_schedule(schedule) {
 		jQuery(".lecture-block").parent("td").removeAttr("filled");
 		jQuery(".lecture-block").remove();
+		jQuery(".cal_data").remove();
 		for(var i=0; i<schedule.length; i++) {
 			var course_idx = schedule[i]["course_idx"];
 			var section_idx = schedule[i]["section_idx"];
@@ -527,10 +528,10 @@ jQuery(document).ready(function(){
 				new_div.css("background-color", color_ehe);
 				jQuery("#"+time["b"]).attr("filled", "true");
 				jQuery("#"+time["b"]).append(new_div);
-				var cal_data = "<input type='hidden' name='"+dataid+"[dtstart]' value='"+give_start(time["b"])+"'>";
-				cal_data += "<input type='hidden' name='"+dataid+"[name]' value='"+course_data[course_idx]['n'].split('-')[0].trim()+"-"+course_data[course_idx]["s"][section_idx]["sn"]+"'>";
-				cal_data += "<input type='hidden' name='"+dataid+"[loc]' value='"+time["p"]+"'>";
-				cal_data += "<input type='hidden' name='"+dataid+"[day]' value='"+give_day(time["b"])+"'>";
+				var cal_data = "<input class='cal_data' type='hidden' name='"+dataid+"[dtstart]' value='"+give_start(time["b"])+"'>";
+				cal_data += "<input class='cal_data' type='hidden' name='"+dataid+"[name]' value='"+course_data[course_idx]['n'].split('-')[0].trim()+"-"+course_data[course_idx]["s"][section_idx]["sn"]+"'>";
+				cal_data += "<input class='cal_data' type='hidden' name='"+dataid+"[loc]' value='"+time["p"]+"'>";
+				cal_data += "<input class='cal_data' type='hidden' name='"+dataid+"[day]' value='"+give_day(time["b"])+"'>";
 				jQuery("#"+time["b"]).append(cal_data);
 			}
 			schedule_color_index++;
